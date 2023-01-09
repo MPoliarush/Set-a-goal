@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Form from './components/Form'
+import ItemsUl from './components/ItemsUl';
+import { useEffect } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+
+const [goalList,setGoalList]=useState(
+ [
+    { id:1,
+      text:'Read book'
+    },
+    { id:2,
+      text:'Learn french'
+    }
+  ]) ;
+
+  function addNewGoal(item){
+    console.log(item)
+    setGoalList([...goalList,item])
+  }
+
+  function deleter(updatedList){
+    setGoalList(updatedList);
+  }
+
+
+  useEffect(() => {
+    localStorage.setItem('goalListLocal',JSON.stringify(goalList));
+  }, [goalList]);
+  
+  
+  // useEffect(() => {
+  //   const data=localStorage.getItem("goalListLocal");
+  //   setGoalList(JSON.parse(data));
+  // }, [])
+  
+
+  return (<div className='main-page'>
+    <Form addNewItem={addNewGoal}/>
+    <ItemsUl list={goalList} remover={deleter}/>
+  </div>)
 }
 
 export default App;
