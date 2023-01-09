@@ -1,6 +1,6 @@
 # Setting-goals React App
 
-## Available at https://mpoliarush.github.io/Setting-goals/
+Available at https://mpoliarush.github.io/Setting-goals/
 
 
 ### Demo:
