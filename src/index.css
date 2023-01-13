@@ -98,6 +98,7 @@ input[value]{
 }
  button:hover{
   transition: 0.5s;
+  cursor: pointer;
   background-color:#344D67;
   color: #F3ECB0;
   border-color: #F3ECB0;;
@@ -125,6 +126,10 @@ li{
   border: dashed 2px;
 }
 
+li:hover{
+  cursor: pointer;
+}
+
 .warning{
 text-align: center;
 color: #4e927c;
@@ -143,6 +148,10 @@ ul button{
   border-radius: 50px;
   border-width: 1px;
   background-color: #E6E2C3;
+}
+
+ul button:hover{
+  cursor: pointer;
 }
 
 
