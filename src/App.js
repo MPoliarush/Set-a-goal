@@ -4,38 +4,40 @@ import ItemsUl from './components/ItemsUl';
 import { useEffect } from "react";
 
 function App(props) {
-  let list=[
-    { id:1,
-      text:'Read book'
-    },
-    { id:2,
-      text:'Learn french'
-    }
-  ]
-
-const [goalList,setGoalList]=useState(list) ;
-console.log(list)
-
-
-  // useEffect(() => {
-  //   const savedData= JSON.parse(localStorage.getItem('localData'));
-  //   console.log(savedData)
-  //   if(savedData.length >0){
-  //     setGoalList(savedData)
+  // let list=[
+  //   { id:1,
+  //     text:'Read book'
+  //   },
+  //   { id:2,
+  //     text:'Learn french'
   //   }
-  // }, []);
+  // ]
+ 
+const [goalList,setGoalList]=useState([])
+   
+  
+
+  useEffect(() => {
+    const savedData= JSON.parse(localStorage.getItem('localData'));
+    
+    if(savedData==null){
+      setGoalList([])
+    } else if (savedData.length>0){
+      setGoalList(savedData)
+    }
+  }, []);
   
 
 
   function addNewGoal(item){
     console.log(item)
     setGoalList([...goalList,item])
-    // localStorage.setItem('localData', JSON.stringify([...goalList,item]))
+    localStorage.setItem('localData', JSON.stringify([...goalList,item]))
   }
 
   function deleter(updatedList){
     setGoalList(updatedList);
-    // localStorage.setItem('localData', JSON.stringify(updatedList))
+    localStorage.setItem('localData', JSON.stringify(updatedList))
   }
 
 
