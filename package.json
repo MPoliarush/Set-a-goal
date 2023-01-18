@@ -1,7 +1,7 @@
 {
   "name": "calculator",
   "version": "0.1.0",
-  "homepage": "https://mpoliaush.github.io/Goals-tracker",
+  "homepage": "https://mpoliaush.github.io/Set-a-goal",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
