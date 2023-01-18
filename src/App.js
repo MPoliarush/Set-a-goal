@@ -39,7 +39,6 @@ console.log(list)
   }
 
 
-
   return (<div className='main-page'>
     <Form addNewItem={addNewGoal}/>
     <ItemsUl list={goalList} remover={deleter}/>
