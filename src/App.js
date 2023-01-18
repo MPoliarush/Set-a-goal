@@ -38,6 +38,7 @@ console.log(list)
     localStorage.setItem('localData', JSON.stringify(updatedList))
   }
 
+  
 
   return (<div className='main-page'>
     <Form addNewItem={addNewGoal}/>
