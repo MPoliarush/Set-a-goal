@@ -13,32 +13,32 @@ function App(props) {
     }
   ]
 
-const [goalList,setGoalList]=useState([]) ;
+const [goalList,setGoalList]=useState(list) ;
 console.log(list)
 
 
-  useEffect(() => {
-    const savedData= JSON.parse(localStorage.getItem('localData'));
-    console.log(savedData)
-    if(savedData.length >0){
-      setGoalList(savedData)
-    }
-  }, []);
+  // useEffect(() => {
+  //   const savedData= JSON.parse(localStorage.getItem('localData'));
+  //   console.log(savedData)
+  //   if(savedData.length >0){
+  //     setGoalList(savedData)
+  //   }
+  // }, []);
   
 
 
   function addNewGoal(item){
     console.log(item)
     setGoalList([...goalList,item])
-    localStorage.setItem('localData', JSON.stringify([...goalList,item]))
+    // localStorage.setItem('localData', JSON.stringify([...goalList,item]))
   }
 
   function deleter(updatedList){
     setGoalList(updatedList);
-    localStorage.setItem('localData', JSON.stringify(updatedList))
+    // localStorage.setItem('localData', JSON.stringify(updatedList))
   }
 
-  
+
 
   return (<div className='main-page'>
     <Form addNewItem={addNewGoal}/>
