@@ -4,37 +4,41 @@ import ItemsUl from './components/ItemsUl';
 import { useEffect } from "react";
 
 function App(props) {
-
-const [goalList,setGoalList]=useState(
- [
+  let list=[
     { id:1,
       text:'Read book'
     },
     { id:2,
       text:'Learn french'
     }
-  ]) ;
+  ]
+
+const [goalList,setGoalList]=useState([]) ;
+console.log(list)
+
+
+  useEffect(() => {
+    const savedData= JSON.parse(localStorage.getItem('localData'));
+    console.log(savedData)
+    if(savedData.length >0){
+      setGoalList(savedData)
+    }
+  }, []);
+  
+
 
   function addNewGoal(item){
     console.log(item)
     setGoalList([...goalList,item])
+    localStorage.setItem('localData', JSON.stringify([...goalList,item]))
   }
 
   function deleter(updatedList){
     setGoalList(updatedList);
+    localStorage.setItem('localData', JSON.stringify(updatedList))
   }
 
 
-  useEffect(() => {
-    localStorage.setItem('goalListLocal',JSON.stringify(goalList));
-  }, [goalList]);
-  
-  
-  // useEffect(() => {
-  //   const data=localStorage.getItem("goalListLocal");
-  //   setGoalList(JSON.parse(data));
-  // }, [])
-  
 
   return (<div className='main-page'>
     <Form addNewItem={addNewGoal}/>
