@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Set-a-goal/static/css/main.303ca35a.css",
+    "main.css": "/Set-a-goal/static/css/main.10d5cb85.css",
     "main.js": "/Set-a-goal/static/js/main.b4ba9964.js",
     "static/media/flowers.png": "/Set-a-goal/static/media/flowers.705be9d34a51cc227037.png",
     "index.html": "/Set-a-goal/index.html",
-    "main.303ca35a.css.map": "/Set-a-goal/static/css/main.303ca35a.css.map",
+    "main.10d5cb85.css.map": "/Set-a-goal/static/css/main.10d5cb85.css.map",
     "main.b4ba9964.js.map": "/Set-a-goal/static/js/main.b4ba9964.js.map"
   },
   "entrypoints": [
-    "static/css/main.303ca35a.css",
+    "static/css/main.10d5cb85.css",
     "static/js/main.b4ba9964.js"
   ]
 }
