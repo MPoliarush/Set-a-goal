@@ -101,10 +101,16 @@ input[value]{
   cursor: pointer;
   background-color:#344D67;
   color: #F3ECB0;
-  border-color: #F3ECB0;;
+  border-color: #F3ECB0;
 }
 
-
+@media (max-width:768px){
+  button:hover{
+    background-color: #F3ECB0;
+  border-color:black;
+  color: black;
+  }
+}
 
 ul{
   max-width: 450px;
